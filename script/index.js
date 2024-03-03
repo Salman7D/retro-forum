@@ -49,7 +49,7 @@ const displayCategorys = categorys =>{
         
       </div>
       <div class="card-actions justify-end">
-      <button><img src="images/email 1.png" alt=""></button>
+      <button onclick="handleRead(${category.id})"><img src="images/email 1.png" alt=""></button>
       </div>
     </div>
         `;
@@ -61,6 +61,38 @@ const displayCategorys = categorys =>{
 
     toggleLoadingSpinnner(false);
 
+}
+
+
+
+const handleRead = async (id) =>{
+    console.log(id);
+
+    // load single data
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/post/${id}`);
+    const detail = await res.json();
+    console.log(detail);
+
+    showDetails(detail);
+}
+
+const showDetails = (category) =>{
+    const readDetails = document.getElementById("read-Details");
+
+    const appendDetails = document.createElement("div");
+
+    appendDetails.classList = `flex justify-between`;
+    appendDetails.innerHTML = `
+    <p>${category.title}</p>
+    <div class="flex gap-2">
+        <img src="images/tabler-icon-eye.png" alt="">
+        <p>${category.view_count}</p>
+    </div>
+    `;
+    readDetails.appendChild(appendDetails);
+
+    const led = category.view_count;
+    console.log(led);
 }
 
 // handle search button
