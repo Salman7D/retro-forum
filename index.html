@@ -58,8 +58,8 @@
 
                 <div class="absolute ml-2 mt-72 lg:mt-96 lg:ml-24">
                     <form action="" class="bg-white rounded-3xl p-1 lg:p-5 h-10 lg:h-14 lg:w-96 flex items-center justify-between">
-                        <input class="border-0 bg-transparent flex-1 outline-none" type="text" placeholder="Search here anything">
-                        <button class="rounded-3xl bg-[#797DFC] text-[#FFF] lg:h-11 lg:p-6 p-1 flex items-center lg:ml-20">Search</button>
+                        <input id="search-field" class="border-0 bg-transparent flex-1 outline-none" type="text" placeholder="Search here anything">
+                        <button type="button" onclick="handleSearch()" class="rounded-3xl bg-[#797DFC] text-[#FFF] lg:h-11 lg:p-6 p-1 flex items-center lg:ml-20">Search</button>
                     </form>
                     
                 </div>
@@ -92,12 +92,54 @@
 
     <main>
         <div class="text-center">
-            <p class="text-[#12132D] text-4xl font-bold lg:mb-6">Let's Discuss</p>
-            <p class="text-[#12132D99] text-lg font-normal lg:mb-12">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+            <p class="text-[#12132D] text-4xl font-bold mb-4 lg:mb-6">Let's Discuss</p>
+            <p class="text-[#12132D99] text-lg font-normal mb-7 lg:mb-12">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
         </div>
         
+        <!-- show loading -->
+
+        <section>
+            <div id="loading-spinner" class="text-center lg:my-40 hidden">
+                <span class="loading loading-bars text-primary loading-lg"></span>
+            </div>
+        </section>
 
 
+        <section>
+            <div id="category-container" class="lg:ml-44">
+                <!-- <div class="lg:w-[772px] lg:h-[270px] lg:mb-6 card w-96 bg-[#F3F3F5] shadow-xl">
+                    <div class="card-body">
+                        <div class="flex">
+                            <p>#music</p>
+                            <p>Author:</p>
+                        </div>
+                      <h2 class="card-title">Card title!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="bg-[#1E325E1A] lg:h-[1px] lg:w-[300px]">
+
+                      </div>
+                      <div class="flex gap-5">
+                        <div class="flex gap-2">
+                            <img class="lg:w-[28px] lg:h-[28px]" src="images/tabler-icon-message-2.png" alt="">
+                            <p>560</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <img class="lg:w-[28px] lg:h-[28px]" src="images/tabler-icon-eye.png" alt="">
+                            <p>1568</p>
+                        </div>
+                        <div class="flex gap-2"> 
+                            <img class="lg:w-[28px] lg:h-[28px]" src="images/tabler-icon-clock-hour-9.png" alt="">
+                            <p>5 min</p>
+                        </div>
+                        
+                      </div>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div> -->
+            </div>
+        </section>
 
 
 
@@ -111,8 +153,8 @@
         </section>
 
         <div class="text-center">
-            <p class="text-[#12132D] text-4xl font-bold lg:mb-6">Latest Postss</p>
-            <p class="text-[#12132D99] text-lg font-normal lg:mb-12">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+            <p class="text-[#12132D] text-4xl font-bold mb-4 lg:mb-6">Latest Postss</p>
+            <p class="text-[#12132D99] text-lg font-normal mb-7 lg:mb-12">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
         </div>
     </main>
 
