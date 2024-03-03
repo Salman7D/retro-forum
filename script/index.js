@@ -1,3 +1,16 @@
+const allPosts = async () =>{
+    const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts");
+    const datas = await res.json();
+    console.log(datas);
+}
+
+allPosts();
+
+
+
+
+
+
 const loadCategory = async (searchText) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const post = await res.json();
