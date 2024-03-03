@@ -19,7 +19,7 @@ const displayCategorys = categorys =>{
         console.log(category)
 
         const categoryCard = document.createElement("div");
-        categoryCard.classList = `lg:w-[772px] lg:h-[270px] lg:mb-6 card w-96 bg-[#F3F3F5] shadow-xl`;
+        categoryCard.classList = `lg:w-[772px] lg:h-[270px] mb-5 lg:mb-6 card w-96 bg-[#F3F3F5] shadow-xl`;
         categoryCard.innerHTML = `
         <div class="card-body">
         <div class="flex">
@@ -49,7 +49,7 @@ const displayCategorys = categorys =>{
         
       </div>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary">Buy Now</button>
+      <button><img src="images/email 1.png" alt=""></button>
       </div>
     </div>
         `;
@@ -88,4 +88,49 @@ const toggleLoadingSpinnner = (isLoading) =>{
     }
 }
 
-// loadCategory();
+loadCategory();
+
+
+const loadPosts = async () =>{
+    const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts");
+    const data = await res.json();
+    // console.log(data);
+    displayPosts(data);
+}
+
+const displayPosts = data =>{
+    // console.log(data);
+
+    const postContainer = document.getElementById("latest-container");
+
+    data.forEach(post =>{
+        console.log(post);
+
+        const postCard =document.createElement("div");
+        postCard.classList = `rounded-3xl border border-solid border-[#0C0D2D42] bg-[#FFF] lg:p-6 lg:w-[374px] lg:h-[482px]`;
+        postCard.innerHTML = `
+
+        <img class="lg:w-[326px] lg:h-[190px] lg:mb-6" src="${post.cover_image}" alt="">
+        <div class="flex gap-2 lg:mb-3">
+            <img class="lg:w-[24px] lg:h-[24px]" src="images/tac.png" alt="">
+            <p>${post?.author?.posted_date??"No publish date"
+            }</p>
+        </div>
+        <p class="lg:mb-3">${post.title}</p>
+        <p class="lg:mb-3">${post.description
+        } </p>
+        <div class="flex gap-2">
+            <img class="lg:w-[44px] lg:h-[44px] w-[44px] h-[44px]" src="${post.
+                profile_image
+                }" alt="">
+            <div>
+                <p>${post.author.name}</p>
+                <p>${post?.author?.designation??"Unknown"}</p>
+            </div>
+        </div>
+        `;
+        postContainer.appendChild(postCard);
+    })
+}
+
+loadPosts();
