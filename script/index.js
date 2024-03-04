@@ -31,10 +31,24 @@ const displayCategorys = categorys =>{
     categorys.forEach(category =>{
         console.log(category)
 
+        let activeStatus = "";
+
+        if(category.isActive){
+            activeStatus = "bg-green-500";
+        }
+        else{
+            activeStatus = "bg-red-500"; 
+        }
+
         const categoryCard = document.createElement("div");
         categoryCard.classList = `lg:w-[772px] lg:h-[270px] mb-5 lg:mb-6 card w-96 bg-[#F3F3F5] shadow-xl`;
         categoryCard.innerHTML = `
         <div class="card-body">
+        <div class="indicator">
+        <span class="lg:h-5 lg:w-5 indicator-item badge ${activeStatus}"></span> 
+        <img class="lg:h-10 lg:w-10 rounded-full" src="${category.image}" alt="">
+      </div>
+
         <div class="flex">
             <p>#${category.category}</p>
             <p>Author: ${category.author.name}</p>
@@ -165,7 +179,7 @@ const displayPosts = data =>{
         <p class="lg:mb-3">${post.description
         } </p>
         <div class="flex gap-2">
-            <img class="lg:w-[44px] lg:h-[44px] w-[44px] h-[44px]" src="${post.
+            <img class="lg:w-[44px] lg:h-[44px] w-[44px] h-[44px] rounded-full" src="${post.
                 profile_image
                 }" alt="">
             <div>
