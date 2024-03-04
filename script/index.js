@@ -50,28 +50,28 @@ const displayCategorys = categorys =>{
       </div>
 
         <div class="flex">
-            <p>#${category.category}</p>
-            <p>Author: ${category.author.name}</p>
+            <p class="text-[#0C0D2D80] text-sm font-medium">#${category.category}</p>
+            <p class="text-[#0C0D2D80] text-sm font-medium">Author: ${category.author.name}</p>
         </div>
-      <h2 class="card-title">${category.title}</h2>
-      <p>${category.description}</p>
-      <div class="bg-[#1E325E1A] lg:h-[1px] lg:w-[300px]">
+      <h2 class="card-title text-[#12132D] text-xl font-bold">${category.title}</h2>
+      <p class="text-[#0C0D2D99] text-base font-normal">${category.description}</p>
+      <div class="bg-[#1E325E1A] h-[1px] w-[300px] lg:h-[1px] lg:w-[700px]">
 
       </div>
       <div class="flex gap-5">
         <div class="flex gap-2">
             <img class="lg:w-[28px] lg:h-[28px]" src="images/tabler-icon-message-2.png" alt="">
-            <p>${category.
+            <p class="text-[#0C0D2D99] text-base font-normal">${category.
             comment_count
             }</p>
         </div>
         <div class="flex gap-2">
             <img class="lg:w-[28px] lg:h-[28px]" src="images/tabler-icon-eye.png" alt="">
-            <p>${category.view_count}</p>
+            <p class="text-[#0C0D2D99] text-base font-normal">${category.view_count}</p>
         </div>
         <div class="flex gap-2"> 
             <img class="lg:w-[28px] lg:h-[28px]" src="images/tabler-icon-clock-hour-9.png" alt="">
-            <p>${category.posted_time} min</p>
+            <p class="text-[#0C0D2D99] text-base font-normal">${category.posted_time} min</p>
         </div>
         
       </div>
@@ -120,10 +120,10 @@ const showDetails = (category) =>{
 
     appendDetails.classList = `flex justify-between`;
     appendDetails.innerHTML = `
-    <p>${category.title}</p>
+    <p class="text-[#12132D] text-base font-semibold">${category.title}</p>
     <div class="flex gap-2">
-        <img src="images/tabler-icon-eye.png" alt="">
-        <p>${category.view_count}</p>
+        <img class="lg:[w-28px] lg:h-[28px]" src="images/tabler-icon-eye.png" alt="">
+        <p class="text-[#0C0D2D99] text-base font-normal">${category.view_count}</p>
     </div>
     `;
     readDetails.appendChild(appendDetails);
@@ -182,19 +182,19 @@ const displayPosts = data =>{
         <img class="lg:w-[326px] lg:h-[190px] lg:mb-6" src="${post.cover_image}" alt="">
         <div class="flex gap-2 lg:mb-3">
             <img class="lg:w-[24px] lg:h-[24px]" src="images/tac.png" alt="">
-            <p>${post?.author?.posted_date??"No publish date"
+            <p class="text-[#0C0D2D99] text-base font-normal">${post?.author?.posted_date??"No publish date"
             }</p>
         </div>
-        <p class="lg:mb-3">${post.title}</p>
-        <p class="lg:mb-3">${post.description
+        <p class="lg:mb-3 text-[#12132D] text-lg font-extrabold">${post.title}</p>
+        <p class="lg:mb-3 text-[#0C0D2D99] text-base font-normal">${post.description
         } </p>
         <div class="flex gap-2">
             <img class="lg:w-[44px] lg:h-[44px] w-[44px] h-[44px] rounded-full" src="${post.
                 profile_image
                 }" alt="">
             <div>
-                <p>${post.author.name}</p>
-                <p>${post?.author?.designation??"Unknown"}</p>
+                <p class="text-[#12132D] text-base font-bold">${post.author.name}</p>
+                <p class="text-[#0C0D2D99] text-sm font-normal">${post?.author?.designation??"Unknown"}</p>
             </div>
         </div>
         `;
