@@ -93,7 +93,6 @@ const displayCategorys = categorys =>{
 
 
 const handleRead = async (id) =>{
-    console.log(id);
 
     // load single data
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/post/${id}`);
@@ -101,6 +100,17 @@ const handleRead = async (id) =>{
     console.log(detail);
 
     showDetails(detail);
+
+    const currentScoreElement = document.getElementById("current-score");
+    const currentScoreText = currentScoreElement.innerText;
+    const currentScore = parseInt(currentScoreText);
+    console.log(currentScore);
+
+    const newScore = currentScore + 1;
+
+    currentScoreElement.innerText = newScore;
+
+    console.log(id);
 }
 
 const showDetails = (category) =>{
