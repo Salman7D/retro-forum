@@ -46,7 +46,7 @@ const displayCategorys = categorys =>{
         <div class="card-body">
         <div class="indicator">
         <span class="lg:h-5 lg:w-5 indicator-item badge ${activeStatus}"></span> 
-        <img class="lg:h-10 lg:w-10 rounded-full" src="${category.image}" alt="">
+        <img class="h-10 w-10 lg:h-10 lg:w-10 rounded-full" src="${category.image}" alt="">
       </div>
 
         <div class="flex">
