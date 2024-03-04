@@ -2,6 +2,7 @@ const allPosts = async () =>{
     const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts");
     const datas = await res.json();
     console.log(datas);
+    displayCategorys(datas.posts);
 }
 
 allPosts();
